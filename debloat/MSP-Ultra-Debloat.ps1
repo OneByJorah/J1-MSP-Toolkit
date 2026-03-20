@@ -1,10 +1,10 @@
-# MSP Ultra Debloat Script
-Write-Host "Running MSP Ultra Debloat..."
+Write-Host "Running MSP ULTRA Debloat..."
 
-# (Shortened for packaging - user already has full version)
-Write-Host "This is the deployed version from GitHub."
-
-# Example action
 Get-AppxPackage *xbox* | Remove-AppxPackage -ErrorAction SilentlyContinue
 
-Write-Host "Debloat complete. Restart recommended."
+Set-Service spooler -StartupType Automatic
+Start-Service spooler
+
+powercfg -setactive SCHEME_MIN
+
+Write-Host "Done. Restart recommended."
