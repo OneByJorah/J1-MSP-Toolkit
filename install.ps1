@@ -1,6 +1,6 @@
-Write-Host "Starting JorahOne MSP Toolkit..."
+Write-Host "Starting J1-MSP-Toolkit..."
 
-$scriptURL = "https://raw.githubusercontent.com/onebyjorah/JorahOne-MSP/main/debloat/MSP-Ultra-Debloat.ps1"
+$scriptURL = "https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/debloat/MSP-Ultra-Debloat.ps1"
 $temp = "$env:TEMP\debloat.ps1"
 
 Invoke-WebRequest $scriptURL -OutFile $temp
