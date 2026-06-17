@@ -30,7 +30,7 @@
 ## 📁 Project Structure
 
 ```
-JorahOne-MSP/
+J1-MSP-Toolkit/
 ├── install.ps1              # Main installer (remote execution entry point)
 ├── debloat/
 │   └── MSP-Ultra-Debloat.ps1  # Core debloat script
@@ -46,15 +46,15 @@ JorahOne-MSP/
 From any PowerShell session with admin rights:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/OneByJorah/JorahOne-MSP/main/install.ps1 | iex"
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/install.ps1 | iex"
 ```
 
 ### Local Execution
 
 ```powershell
 # Clone the repository
-git clone https://github.com/OneByJorah/JorahOne-MSP.git
-cd JorahOne-MSP
+git clone https://github.com/OneByJorah/J1-MSP-Toolkit.git
+cd J1-MSP-Toolkit
 
 # Run as Administrator
 powershell -ExecutionPolicy Bypass -File install.ps1
@@ -125,7 +125,7 @@ $CreateRestorePoint = $true
 
 ```powershell
 # Re-run the installer to get the latest version
-powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/OneByJorah/JorahOne-MSP/main/install.ps1 | iex"
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/install.ps1 | iex"
 ```
 
 ---
@@ -156,7 +156,7 @@ This tool modifies system settings and removes Windows components. Always test i
 
 For issues or questions, please open an issue on GitHub:
 
-https://github.com/OneByJorah/JorahOne-MSP/issues
+https://github.com/OneByJorah/J1-MSP-Toolkit/issues
 
 ---
 
