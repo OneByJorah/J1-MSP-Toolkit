@@ -1,6 +1,6 @@
-# J1 MSP Toolkit (J1-MSP-Toolkit)
+# J1 MSP Toolkit — MSP Ultra Debloat
 
-**Version:** v0.1  
+**Version:** v1.0  
 **Status:** Active Development  
 **Repository:** https://github.com/OneByJorah/J1-MSP-Toolkit
 
@@ -24,62 +24,64 @@
 
 ## Overview
 
-MSP tool suite for client management, monitoring, and support automation.
+J1 MSP Toolkit is a lightweight Windows MSP support script: remove bloatware, normalize power settings, and prepare customer machines with one PowerShell launcher. It pulls the latest debloat script from this repo and runs it non-interactively.
+
+Designed for MSP technicians who want a single entry point for Windows provisioning.
 
 ---
 
 ## Architecture
 
-Client → Local service (`J1-MSP-Toolkit`) → data/processing modules → output/api layer.
-Secrets and environment configuration are managed via environment files with restrictive permissions.
+`install.ps1` downloads `debloat/MSP-Ultra-Debloat.ps1` to `%TEMP%` and executes it with bypassed execution policy.
+
+The debloat script removes AppX packages (including Xbox bloat), ensures the Print Spooler is running and set to Automatic, and applies the balanced power scheme (`SCHEME_MIN`).
 
 ---
 
 ## Technology Stack
 
-|| Layer | Stack |
+| Layer | Stack |
 |---|---|
-| Runtime | Linux (Ubuntu 22.04+) |
-| Primary Stack | HTML5 / JavaScript |
+| Runtime | Windows 10/11 (PowerShell 5.1+) |
+| Packaging | PowerShell script |
 | VCS | Git + GitHub (`github.com/OneByJorah/J1-MSP-Toolkit`) |
-| Dev Port | Localhost / systemd service |
 
 ---
 
 ## Features
 
-- Operational dashboard and monitoring (per repo).
-- Exportable data / reports where supported.
-- Extensible service-based design.
-- Dark-themed UI where applicable.
+- **One-click debloat**: downloads and runs the latest script from GitHub main.
+- **Bloatware removal**: removes Xbox and other common AppX bloat.
+- **Service hardening**: ensures Print Spooler is enabled.
+- **Power tuning**: applies `SCHEME_MIN` power plan.
+- **MSP-friendly**: non-interactive and restart-friendly.
 
 ---
 
 ## Getting Started
 
-```bash
-# 1. Clone the repository
+```powershell
+# 1. Clone (or download ZIP)
 git clone https://github.com/OneByJorah/J1-MSP-Toolkit.git
 cd J1-MSP-Toolkit
 
-# 2. Install dependencies
-# (see specific subproject docs)
-
-# 3. Start the service
-# (see Service Management below)
+# 2. Run
+.\install.ps1
 ```
+
+> Requires an internet connection to reach GitHub for the script fetch.
+> Run PowerShell as Administrator for full effect.
 
 ---
 
 ## Service Management
 
-```bash
-# Start the service (example)
-sudo systemctl start J1-MSP-Toolkit.service
-sudo systemctl enable J1-MSP-Toolkit.service
-```
+This is a one-shot provisioning script; no background service is installed.
 
-Access the service via your configured localhost port or reverse proxy.
+```powershell
+# Rerun after a reboot or on a new machine
+.\install.ps1
+```
 
 ---
 
@@ -87,15 +89,15 @@ Access the service via your configured localhost port or reverse proxy.
 
 ```
 J1-MSP-Toolkit/
-├── README.md
-├── (additional project files)
+├── install.ps1                     # One-click download + execute launcher
+├── debloat/
+│   └── MSP-Ultra-Debloat.ps1       # Provisioning logic
+└── README.md
 ```
 
 ---
 
 ## Screenshots
-
-All screenshots are live captures from the local dev instance.
 
 _(Screenshots will be added after build/run capture.)_
 
@@ -104,8 +106,8 @@ _(Screenshots will be added after build/run capture.)_
 ## Contributing
 
 1. Create a feature branch off `main`.
-2. Follow the existing code style.
-3. Submit a PR with description and screenshots for UI changes.
+2. Keep the debloat script idempotent where possible.
+3. Submit a PR with description and before/after screenshots for changes.
 
 ---
 
