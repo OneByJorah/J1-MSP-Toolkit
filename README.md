@@ -1,32 +1,19 @@
-# J1 MSP Toolkit — MSP Ultra Debloat
+# J1 MSP Toolkit
 
-**Version:** v1.0  
-**Status:** Active Development  
-**Repository:** https://github.com/OneByJorah/J1-MSP-Toolkit
+> PowerShell toolkit for MSP automation, onboarding, and client management.
 
----
+![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-active-%23FFB300?style=for-the-badge)
+![Language](https://img.shields.io/badge/language-Python-informational?style=for-the-badge)
+![Platform](https://img.shields.io/badge/platform-linux-informational?style=for-the-badge)
 
-## Table of Contents
+J1 MSP Toolkit is an enterprise-grade, ops-precise platform built for VIDE and SMB operations. Run it solo. Deliver results.
 
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Technology Stack](#technology-stack)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Service Management](#service-management)
-- [Project Structure](#project-structure)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
-
----
-
-## Overview
-
-J1 MSP Toolkit is a lightweight Windows MSP support script: remove bloatware, normalize power settings, and prepare customer machines with one PowerShell launcher. It pulls the latest debloat script from this repo and runs it non-interactively.
-
-Designed for MSP technicians who want a single entry point for Windows provisioning.
+- **One-click debloat**: downloads and runs the latest script from GitHub main.
+- **Bloatware removal**: removes Xbox and other common AppX bloat.
+- **Service hardening**: ensures Print Spooler is enabled.
+- **Power tuning**: applies `SCHEME_MIN` power plan.
+- **MSP-friendly**: non-interactive and restart-friendly.
 
 ---
 
@@ -38,8 +25,6 @@ The debloat script removes AppX packages (including Xbox bloat), ensures the Pri
 
 ---
 
-## Technology Stack
-
 | Layer | Stack |
 |---|---|
 | Runtime | Windows 10/11 (PowerShell 5.1+) |
@@ -48,75 +33,25 @@ The debloat script removes AppX packages (including Xbox bloat), ensures the Pri
 
 ---
 
-## Features
+## Quickstart
 
-- **One-click debloat**: downloads and runs the latest script from GitHub main.
-- **Bloatware removal**: removes Xbox and other common AppX bloat.
-- **Service hardening**: ensures Print Spooler is enabled.
-- **Power tuning**: applies `SCHEME_MIN` power plan.
-- **MSP-friendly**: non-interactive and restart-friendly.
-
----
-
-## Getting Started
-
-```powershell
-# 1. Clone (or download ZIP)
+```bash
 git clone https://github.com/OneByJorah/J1-MSP-Toolkit.git
 cd J1-MSP-Toolkit
-
-# 2. Run
-.\install.ps1
+# Follow in-repo setup instructions
 ```
+Verify by checking service health or running the in-repo test command.
 
-> Requires an internet connection to reach GitHub for the script fetch.
-> Run PowerShell as Administrator for full effect.
+## Roadmap
 
----
-
-## Service Management
-
-This is a one-shot provisioning script; no background service is installed.
-
-```powershell
-# Rerun after a reboot or on a new machine
-.\install.ps1
-```
-
----
-
-## Project Structure
-
-```
-J1-MSP-Toolkit/
-├── install.ps1                     # One-click download + execute launcher
-├── debloat/
-│   └── MSP-Ultra-Debloat.ps1       # Provisioning logic
-└── README.md
-```
-
----
-
-## Screenshots
-
-_(Screenshots will be added after build/run capture.)_
-
----
-
-## Contributing
-
-1. Create a feature branch off `main`.
-2. Keep the debloat script idempotent where possible.
-3. Submit a PR with description and before/after screenshots for changes.
-
----
+- Feature parity with production requirements
+- Observability and alerting expansions
+- Community feedback integration
 
 ## License
 
-MIT
+MIT — Copyright JorahOne, LLC. See [LICENSE](LICENSE) for details.
 
 ---
 
-## Author
-
-Built by **Jhonattan L. Jimenez**.
+[OneByJorah](https://github.com/OneByJorah) · [JorahOne-Services](https://github.com/JorahOne-Services)
