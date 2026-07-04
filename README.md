@@ -1,122 +1,65 @@
-# J1 MSP Toolkit — MSP Ultra Debloat
+<div align="center">
+  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
+  <img src="https://img.shields.io/badge/MSP-00A4EF?style=for-the-badge&logo=microsoft&logoColor=white">
+</div>
 
-**Version:** v1.0  
-**Status:** Active Development  
-**Repository:** https://github.com/OneByJorah/J1-MSP-Toolkit
+<br>
 
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Technology Stack](#technology-stack)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Service Management](#service-management)
-- [Project Structure](#project-structure)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
+<div align="center">
+  <h1>🔧 J1 MSP Toolkit</h1>
+  <p><strong>Lightweight PowerShell Provisioning & Debloat Utility for MSP Technicians</strong></p>
+  <p>One-click Windows 10/11 provisioning — debloat, harden, and tune</p>
+  <p>
+    <a href="#-features">Features</a> •
+    <a href="#-quick-start">Quick Start</a> •
+    <a href="#-what-it-does">What It Does</a>
+  </p>
+</div>
 
 ---
 
-## Overview
+## ✨ Features
 
-J1 MSP Toolkit is a lightweight Windows MSP support script: remove bloatware, normalize power settings, and prepare customer machines with one PowerShell launcher. It pulls the latest debloat script from this repo and runs it non-interactively.
+- **One-Click Provisioning** — Single PowerShell script for full setup
+- **Debloat** — Removes AppX packages, Xbox bloatware
+- **Service Hardening** — Ensures Print Spooler is enabled and automatic
+- **Power Tuning** — Applies high performance/balanced power scheme
+- **Restart-Friendly** — No background service installation required
+- **Remote Execution** — Download and execute debloat script from URL
 
-Designed for MSP technicians who want a single entry point for Windows provisioning.
-
----
-
-## Architecture
-
-`install.ps1` downloads `debloat/MSP-Ultra-Debloat.ps1` to `%TEMP%` and executes it with bypassed execution policy.
-
-The debloat script removes AppX packages (including Xbox bloat), ensures the Print Spooler is running and set to Automatic, and applies the balanced power scheme (`SCHEME_MIN`).
-
----
-
-## Technology Stack
-
-| Layer | Stack |
-|---|---|
-| Runtime | Windows 10/11 (PowerShell 5.1+) |
-| Packaging | PowerShell script |
-| VCS | Git + GitHub (`github.com/OneByJorah/J1-MSP-Toolkit`) |
-
----
-
-## Features
-
-- **One-click debloat**: downloads and runs the latest script from GitHub main.
-- **Bloatware removal**: removes Xbox and other common AppX bloat.
-- **Service hardening**: ensures Print Spooler is enabled.
-- **Power tuning**: applies `SCHEME_MIN` power plan.
-- **MSP-friendly**: non-interactive and restart-friendly.
-
----
-
-## Getting Started
+## 🚀 Quick Start
 
 ```powershell
-# 1. Clone (or download ZIP)
-git clone https://github.com/OneByJorah/J1-MSP-Toolkit.git
-cd J1-MSP-Toolkit
-
-# 2. Run
+# Run from an elevated PowerShell prompt
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\install.ps1
 ```
 
-> Requires an internet connection to reach GitHub for the script fetch.
-> Run PowerShell as Administrator for full effect.
-
----
-
-## Service Management
-
-This is a one-shot provisioning script; no background service is installed.
-
+Or download and execute remotely:
 ```powershell
-# Rerun after a reboot or on a new machine
-.\install.ps1
+# One-liner for technician use
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/install.ps1'))
 ```
 
----
+## 🔧 What It Does
 
-## Project Structure
+| Step | Action |
+|------|--------|
+| 1 | Downloads MSP-Ultra-Debloat.ps1 |
+| 2 | Removes AppX packages (bloatware) |
+| 3 | Removes Xbox-related items |
+| 4 | Ensures Print Spooler is enabled |
+| 5 | Sets power scheme to high performance |
+| 6 | System ready for production use |
 
-```
-J1-MSP-Toolkit/
-├── install.ps1                     # One-click download + execute launcher
-├── debloat/
-│   └── MSP-Ultra-Debloat.ps1       # Provisioning logic
-└── README.md
-```
+## 📄 License
 
----
-
-## Screenshots
-
-_(Screenshots will be added after build/run capture.)_
+MIT © Jhonattan L. Jimenez
 
 ---
 
-## Contributing
-
-1. Create a feature branch off `main`.
-2. Keep the debloat script idempotent where possible.
-3. Submit a PR with description and before/after screenshots for changes.
-
----
-
-## License
-
-MIT
-
----
-
-## Author
-
-Built by **Jhonattan L. Jimenez**.
+<div align="center">
+  <p>⚡ Fast Windows provisioning for MSPs</p>
+  <p><a href="https://github.com/OneByJorah">@OneByJorah</a></p>
+</div>
