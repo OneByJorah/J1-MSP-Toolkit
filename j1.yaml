@@ -1,0 +1,15 @@
+repo: J1-MSP-Toolkit
+class: PowerShell, Shell, Windows, CLI
+org: OneByJorah
+owner: Jhonattan L. Jimenez
+license: MIT
+production_score: 76
+last_audit: "2026-07-05T20:30:00Z"
+last_publish: null
+standards_version: "2.1"
+dependencies: []
+deploy_target: scratch
+tailscale_only: false
+public_facing: true
+community_sla_hours: 48
+adoption_tracked: false
