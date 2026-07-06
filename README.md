@@ -1,80 +1,53 @@
+<!-- j1-brand:v2 -->
 <div align="center">
-  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
-  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
-  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge">
-</div>
 
-<br>
+# J1-MSP-Toolkit
 
-<div align="center">
-  <h1>🔧 J1 MSP Toolkit</h1>
-  <p><strong>Windows 10/11 Provisioning &amp; Debloat Utility for MSP Technicians</strong></p>
-  <p>One-click Windows provisioning — debloat, harden, and tune for production use</p>
-  <p>
-    <a href="#-features">Features</a> •
-    <a href="#-quick-start">Quick Start</a> •
-    <a href="#-what-it-does">What It Does</a> •
-    <a href="#-remote-execution">Remote Execution</a>
-  </p>
+A PowerShell-based Windows 10/11 provisioning and debloating toolkit for MSP technicians — one-click setup, bloatware removal, service hardening, and power tuning.
+
+[![GitHub](https://img.shields.io/badge/github-OneByJorah%2FJ1--MSP--Toolkit-FFB300?style=for-the-badge&labelColor=0d0d0c)](https://github.com/OneByJorah/J1-MSP-Toolkit)
+[![License](https://img.shields.io/badge/license-MIT-FFB300?style=for-the-badge&labelColor=0d0d0c)](LICENSE)
+[![Language](https://img.shields.io/badge/PowerShell-FFB300?style=for-the-badge&labelColor=0d0d0c)](https://learn.microsoft.com/en-us/powershell/)
+[![Built by](https://img.shields.io/badge/built%20by-JorahOne%20LLC-FFB300?style=for-the-badge&labelColor=0d0d0c)](https://github.com/OneByJorah)
+
 </div>
 
 ---
 
-## ✨ Features
+## Why This Exists
 
-- **One-Click Provisioning** — Single PowerShell script for full Windows setup
-- **AppX Bloatware Removal** — Removes pre-installed Windows Store apps and Xbox bloatware
-- **Service Hardening** — Ensures essential services (Print Spooler) are enabled and automatic
-- **Power Tuning** — Applies high performance or balanced power scheme
-- **Restart-Friendly** — No background service installation required; run from any PowerShell prompt
-- **Remote Execution** — Deploy via URL download — perfect for remote technician scenarios
+MSPs deploy and re-deploy Windows machines constantly. Each one needs bloatware stripped, services hardened, and power settings tuned — a repetitive, error-prone manual process. The J1-MSP-Toolkit automates it: one PowerShell script that debloats, hardens critical services, configures power schemes, and prepares Windows for production use.
 
-## 🚀 Quick Start
+## Key Features
+
+| Feature | Why It Matters |
+|---|---|
+| One-click setup | Single PowerShell script for full deployment |
+| Bloatware removal | Strips pre-installed Windows Store apps and Xbox bloatware |
+| Service hardening | Ensures critical services (Print Spooler, etc.) are set correctly |
+| Power tuning | Configures high-performance or balanced power schemes |
+| Remote execution ready | Run via URL — no manual file copy needed |
+
+## Quick Start
+
+Run in an elevated PowerShell prompt (as Administrator):
 
 ```powershell
-# Run from an elevated PowerShell prompt
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\install.ps1
 ```
 
-## 🔧 What It Does
+## Documentation
 
-| Step | Action |
-|------|--------|
-| 1 | Downloads MSP-Ultra-Debloat.ps1 utility |
-| 2 | Removes AppX packages (system bloatware) |
-| 3 | Removes Xbox-related applications and services |
-| 4 | Ensures Print Spooler service is enabled and running |
-| 5 | Sets power scheme to High Performance or Balanced |
-| 6 | System is ready for production deployment |
-
-## 🌐 Remote Execution
-
-For remote technician scenarios, download and execute directly:
-
-```powershell
-# One-liner for MSP technician use
-iex ((New-Object System.Net.WebClient).DownloadString(
-  'https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/install.ps1'
-))
-```
-
-## 📁 Project Structure
-
-```
-J1-MSP-Toolkit/
-├── install.ps1           # Main installation script
-├── debloat/              # Debloat utility scripts
-└── README.md
-```
-
-## 📄 License
-
-MIT © Jhonattan L. Jimenez
+| Doc | Description |
+|---|---|
+| [Usage Guide](docs/usage.md) | Running the toolkit and available options |
+| [Customization](docs/customization.md) | Tailoring the debloat and hardening lists |
 
 ---
 
-<div align="center">
-  <p>⚡ Fast Windows provisioning for MSPs</p>
-  <p><a href="https://github.com/OneByJorah">@OneByJorah</a></p>
-</div>
+## License
+
+MIT © JorahOne, LLC — see [LICENSE](LICENSE)
+
+<sub>Part of the JorahOne infrastructure ecosystem.</sub>
