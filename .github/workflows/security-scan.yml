@@ -1,0 +1,46 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  analyze:
+    name: PowerShell Security Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install PowerShell
+        uses: actions/setup-powershell@v1
+
+      - name: Install PSScriptAnalyzer
+        shell: pwsh
+        run: Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
+
+      - name: Run PSScriptAnalyzer security rules
+        shell: pwsh
+        run: |
+          $results = Invoke-ScriptAnalyzer -Path . -Recurse -IncludeRule @(
+            'PossibleInjection',
+            'UseCmdletCorrectly',
+            'UseOutputTypeCorrectly',
+            'AvoidUsingPlainTextForPassword',
+            'AvoidUsingConvertToSecureStringWithPlainText',
+            'AvoidUsingUsernameAndPasswordParams'
+          )
+          if ($results) {
+            $results | Format-Table
+            exit 1
+          }
+          Write-Host "No security issues found by PSScriptAnalyzer."
