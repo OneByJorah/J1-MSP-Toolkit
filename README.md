@@ -20,6 +20,10 @@
 
 ---
 
+## 📸 Screenshot
+
+This is a CLI/backend-only tool. No screenshots available.
+
 ## ✨ Features
 
 - **One-Click Provisioning** — Single PowerShell script for full Windows setup
@@ -47,6 +51,19 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 | 4 | Ensures Print Spooler service is enabled and running |
 | 5 | Sets power scheme to High Performance or Balanced |
 | 6 | System is ready for production deployment |
+
+## 📋 System Requirements
+
+| Requirement | Details |
+|-------------|---------|
+| **OS** | Windows 10 (1809+) or Windows 11 |
+| **PowerShell** | 5.1 or later |
+| **Privileges** | Administrator (elevated) access required |
+| **Architecture** | x64 (x86 supported but not recommended) |
+| **Network** | Internet access to download scripts from GitHub |
+| **Containerization** | ❌ **Not supported** — This is a Windows-native PowerShell toolkit. It cannot be containerized or run on Linux/macOS. |
+
+> **Note:** J1-MSP-Toolkit is a **Windows-only** utility. It interacts directly with Windows system services, AppX packages, and power management — none of which are available in Docker/Linux environments. For remote execution, use the one-liner below or deploy via RMM tools.
 
 ## 🌐 Remote Execution
 
