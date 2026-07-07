@@ -38,7 +38,7 @@ Describe "install.ps1" {
         Mock Invoke-WebRequest { return $null }
         Mock powershell { return $null }
 
-        $scriptURL = "https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/debloat/MSP-Ultra-Debloat.ps1"
+        $scriptURL = "https://raw.githubusercontent.com/OneByJorah/MSPEngine/main/debloat/MSP-Ultra-Debloat.ps1"
         $temp = "$env:TEMP\debloat.ps1"
 
         Invoke-WebRequest $scriptURL -OutFile $temp

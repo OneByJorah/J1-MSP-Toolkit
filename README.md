@@ -7,7 +7,7 @@
 <br>
 
 <div align="center">
-  <h1>🔧 J1 MSP Toolkit</h1>
+  <h1>🔧 MSPEngine</h1>
   <p><strong>Windows 10/11 Provisioning &amp; Debloat Utility for MSP Technicians</strong></p>
   <p>One-click Windows provisioning — debloat, harden, and tune for production use</p>
   <p>
@@ -36,7 +36,7 @@ Run this one-liner from an **elevated PowerShell** prompt on any Windows 10/11 m
 ```powershell
 # One-liner for MSP technician use — downloads and executes the toolkit
 iex ((New-Object System.Net.WebClient).DownloadString(
-  'https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/install.ps1'
+  'https://raw.githubusercontent.com/OneByJorah/MSPEngine/main/install.ps1'
 ))
 ```
 
@@ -65,7 +65,7 @@ For remote technician scenarios, use the one-liner in [Quick Start](#-quick-star
 ## 📁 Project Structure
 
 ```
-J1-MSP-Toolkit/
+|MSPEngine/
 ├── install.ps1                    # Bootstrap installer — downloads and executes debloat script
 ├── debloat/
 │   └── MSP-Ultra-Debloat.ps1     # Core debloat utility — removes Xbox bloat, enables services

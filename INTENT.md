@@ -1,6 +1,6 @@
 # INTENT.md — J1-PIPELINE Phase -1 (ORACLE)
 
-**Repository:** `OneByJorah/J1-MSP-Toolkit`
+**Repository:** `OneByJorah/MSPEngine`
 **Analysis Date:** 2026-07-05
 **Analyst:** J1-PIPELINE ORACLE (read-only)
 **Status:** Intent Reconstructed
@@ -11,7 +11,7 @@
 
 ### Technical Role
 
-J1-MSP-Toolkit is a **Windows 10/11 provisioning and debloat utility** for Managed Service Provider (MSP) technicians. It is a two-script PowerShell toolchain:
+MSPEngine is a **Windows 10/11 provisioning and debloat utility** for Managed Service Provider (MSP) technicians. It is a two-script PowerShell toolchain:
 
 | Script | Role | Action |
 |--------|------|--------|
@@ -69,13 +69,13 @@ The creation of the **JorahOne (OneByJorah) ecosystem** created a need for a sta
 - Served as a foundational building block for MSP service offerings
 - Could be audited, forked, and improved by the community
 
-The initial commit (`ca89ad3 "Add files via upload"`) shows the repo was created by uploading existing scripts, then iteratively documented and standardized through multiple README revisions and a security audit. The repo was later renamed from an original name (commits `f5263b9`, `851e786`) to `J1-MSP-Toolkit`.
+The initial commit (`ca89ad3 "Add files via upload"`) shows the repo was created by uploading existing scripts, then iteratively documented and standardized through multiple README revisions and a security audit. The repo was later renamed from an original name (commits `f5263b9`, `851e786`) to `MSPEngine`.
 
 ### Ecosystem Fit
 
 ```
 JorahOne / OneByJorah Ecosystem
-├── J1-MSP-Toolkit          ← Windows provisioning utility (this repo)
+├── MSPEngine          ← Windows provisioning utility (this repo)
 ├── J1-Hermes-Agent         ← AI agent orchestration (sibling)
 ├── J1-* (other repos)      ← JorahOne infrastructure & tooling
 └── MSP Service Offerings    ← Downstream consumers of provisioned Windows workstations
@@ -121,7 +121,7 @@ Evidence:
 ## Repository Structure
 
 ```
-J1-MSP-Toolkit/
+MSPEngine/
 ├── install.ps1                    # Bootstrap installer (7 lines)
 ├── debloat/
 │   └── MSP-Ultra-Debloat.ps1     # Core debloat utility (10 lines)
@@ -154,9 +154,9 @@ J1-MSP-Toolkit/
 - **No test files** — No smoke tests, Pester tests, or any test infrastructure. The ROADMAP mentions "Test coverage expansion" as a current goal.
 - **No Docker/compose files** — Expected; this is a native Windows PowerShell utility, not a containerized service.
 - **No config files** — No `.env.example`, `settings.yml`, or configuration templates. The script has no configurable parameters.
-- **Repo was renamed** — Git history shows the repo was renamed to `J1-MSP-Toolkit` from a previous name (commits `f5263b9`, `851e786`). The original name is not preserved in the history.
+- **Repo was renamed** — Git history shows the repo was renamed to `MSPEngine` from a previous name (commits `f5263b9`, `851e786`). The original name is not preserved in the history.
 - **Initial commit is generic** — `ca89ad3 "Add files via upload"` provides no intent signal. Intent is reconstructed entirely from README, code, and subsequent commits.
 - **Security audit performed** — Commit `364a6ec` sanitized email references, indicating proactive security review.
-- **Branding alignment** — README consistently uses "J1 MSP Toolkit" brand, matching repo name. No naming discrepancy.
+- **Branding alignment** — README consistently uses "MSPEngine" brand, matching repo name. No naming discrepancy.
 - **No CI beyond CodeQL** — No test runner, no linting, no build pipeline. CodeQL is the only automated check.
 - **Bug report template references non-Windows environment fields** — The template asks for "OS: [e.g. Ubuntu 22.04]", "Python Version", and "Docker Version", which are irrelevant for a Windows PowerShell utility. This is a template vestige from a generic J1 template.
