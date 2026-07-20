@@ -7,7 +7,7 @@
 <br>
 
 <div align="center">
-  <h1>🔧 J1 MSP Toolkit</h1>
+  <h1>🔧 MSPEngine</h1>
   <p><strong>Windows 10/11 Provisioning &amp; Debloat Utility for MSP Technicians</strong></p>
   <p>One-click Windows provisioning — debloat, harden, and tune for production use</p>
   <p>
@@ -72,14 +72,14 @@ For remote technician scenarios, download and execute directly:
 ```powershell
 # One-liner for MSP technician use
 iex ((New-Object System.Net.WebClient).DownloadString(
-  'https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/install.ps1'
+  'https://raw.githubusercontent.com/OneByJorah/MSPEngine/main/install.ps1'
 ))
 ```
 
 ## 📁 Project Structure
 
 ```
-J1-MSP-Toolkit/
+MSPEngine/
 ├── install.ps1           # Main installation script
 ├── debloat/              # Debloat utility scripts
 └── README.md
@@ -87,7 +87,7 @@ J1-MSP-Toolkit/
 
 ## 📄 License
 
-MIT © Jhonattan L. Jimenez
+MIT © Jhonattan L. Jimenez / JorahOne LLC
 
 ---
 
