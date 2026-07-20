@@ -33,7 +33,7 @@
 #>
 
 param(
-    [string]$ScriptUrl = "https://raw.githubusercontent.com/OneByJorah/J1-MSP-Toolkit/main/debloat/MSP-Ultra-Debloat.ps1",
+    [string]$ScriptUrl = "",
     [switch]$SkipDeploy,
     [string]$TempPath = "$env:TEMP\debloat.ps1",
     [string]$ExecutionPolicy = "RemoteSigned"
@@ -62,18 +62,38 @@ if (-not $isAdmin) {
     Write-Host ""
 }
 
-# ── Download Script ───────────────────────────────────────
-Write-Host "Downloading debloat script from:" -ForegroundColor Green
-Write-Host "  $ScriptUrl"
-Write-Host "  → $TempPath"
-Write-Host ""
-
-try {
-    Invoke-WebRequest -Uri $ScriptUrl -OutFile $TempPath -ErrorAction Stop
-    Write-Host "✓ Download complete." -ForegroundColor Green
-} catch {
-    Write-Host "✗ Download failed: $_" -ForegroundColor Red
-    exit 1
+# ── Resolve Script Source ────────────────────────────────
+# Default to the bundled local script so a clean clone works offline.
+# Pass -ScriptUrl to fetch a remote/custom copy instead.
+if (-not $ScriptUrl) {
+    $localScript = Join-Path $PSScriptRoot "debloat\MSP-Ultra-Debloat.ps1"
+    if (-not (Test-Path $localScript)) {
+        Write-Host "✗ Bundled script not found at: $localScript" -ForegroundColor Red
+        exit 1
+    }
+    Write-Host "Using bundled script:" -ForegroundColor Green
+    Write-Host "  $localScript"
+    Write-Host "  → $TempPath"
+    Write-Host ""
+    try {
+        Copy-Item -Path $localScript -Destination $TempPath -Force -ErrorAction Stop
+        Write-Host "✓ Copy complete." -ForegroundColor Green
+    } catch {
+        Write-Host "✗ Copy failed: $_" -ForegroundColor Red
+        exit 1
+    }
+} else {
+    Write-Host "Downloading debloat script from:" -ForegroundColor Green
+    Write-Host "  $ScriptUrl"
+    Write-Host "  → $TempPath"
+    Write-Host ""
+    try {
+        Invoke-WebRequest -Uri $ScriptUrl -OutFile $TempPath -ErrorAction Stop
+        Write-Host "✓ Download complete." -ForegroundColor Green
+    } catch {
+        Write-Host "✗ Download failed: $_" -ForegroundColor Red
+        exit 1
+    }
 }
 
 # ── Execute Script ─────────────────────────────────────────

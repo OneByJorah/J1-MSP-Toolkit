@@ -2,13 +2,24 @@
 *.ps1xml
 Format.ps1xml
 Types.ps1xml
+*.ps1_*.log
+
 # IDE
 .vscode/
 .idea/
+*.swp
+
 # OS
 .DS_Store
 Thumbs.db
+Desktop.ini
+
 # Environment
 .env
-# Logs
+.env.local
+
+# Logs & build output
 *.log
+build/
+out/
+
