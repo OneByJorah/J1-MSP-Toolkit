@@ -1,57 +1,103 @@
-# MSPEngine (J1 MSP Toolkit)
+<div align="center">
+  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
+  <img src="https://img.shields.io/badge/Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white">
+  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge">
+</div>
 
-Windows 10/11 provisioning and debloat utility for MSP technicians — one-click setup, hardening, and tuning.
+<br>
 
-![status](https://img.shields.io/badge/status-active-FFB300?style=flat-square)
-![language](https://img.shields.io/badge/powershell-0d0d0c?style=flat-square)
-![license](https://img.shields.io/badge/license-MIT-FFB300?style=flat-square)
+<div align="center">
+  <h1>MSPEngine</h1>
+  <p><strong>Windows 10/11 Provisioning & Debloat Utility</strong></p>
+  <p>One-click setup and hardening for MSP technicians.</p>
+  <p>
+    <a href="#features">Features</a> •
+    <a href="#quick-start">Quick Start</a> •
+    <a href="#modules">Modules</a> •
+    <a href="#contributing">Contributing</a>
+  </p>
+</div>
 
-## Overview
+---
 
-MSPEngine (branded "J1 MSP Toolkit") is a self-hosted PowerShell provisioning utility for MSP technicians that performs one-click Windows 10/11 setup — removing AppX bloatware, hardening services, tuning power settings, and preparing systems for production deployment. Supports remote execution via URL download for technician scenarios.
+## Screenshot
+
+![MSPEngine Interface](docs/screenshot.png)
+*Windows provisioning and debloat utility for MSP technicians.*
 
 ## Features
 
-- One-click provisioning — single PowerShell script for full Windows setup
-- AppX bloatware removal — removes pre-installed Windows Store apps and Xbox bloatware
-- Service hardening — ensures essential services (Print Spooler) are enabled and automatic
-- Power tuning — applies high performance or balanced power scheme
-- Restart-friendly — no background service required; run from any PowerShell prompt
-- Remote execution — deploy via URL download for remote technician scenarios
+- **One-Click Setup** — Automate Windows deployment and configuration.
+- **Debloat** — Remove unnecessary Windows components and bloatware.
+- **Hardening** — Apply security best practices automatically.
+- **MSP Optimized** — Designed for managed service providers.
+- **Modular Design** — Enable/disable specific configuration modules.
+- **Logging** — Full audit trail of all changes.
+- **Silent Mode** — Run unattended for mass deployment.
 
-## What It Does
-
-| Step | Action |
-|------|--------|
-| 1 | Downloads MSP-Ultra-Debloat.ps1 utility |
-| 2 | Removes AppX packages (system bloatware) |
-| 3 | Removes Xbox-related applications and services |
-| 4 | Ensures Print Spooler service is enabled and running |
-| 5 | Sets power scheme to High Performance or Balanced |
-| 6 | System is ready for production deployment |
-
-## System Requirements
-
-- Windows 10 or Windows 11
-- PowerShell 5.1+
-- Administrator privileges
-
-## Installation
+## Quick Start
 
 ```powershell
-# Run from an elevated PowerShell prompt
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-.\install.ps1
+# Download and run
+git clone https://github.com/OneByJorah/MSPEngine.git
+cd MSPEngine
+
+# Run as Administrator
+.\Start-MSPEngine.ps1
 ```
 
-Or remote execution:
-```powershell
-irm https://raw.githubusercontent.com/OneByJorah/MSPEngine/main/install.ps1 | iex
+## Modules
+
+| Module | Description |
+|--------|-------------|
+| **Debloat** | Remove Windows bloatware and telemetry |
+| **Security** | Apply security hardening policies |
+| **Network** | Configure network settings |
+| **Drivers** | Install/update device drivers |
+| **Software** | Deploy common applications |
+| **Updates** | Configure Windows Update policy |
+
+## Configuration
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `MODE` | `interactive` | Run mode (interactive/silent) |
+| `LOG_PATH` | `.\logs` | Log file directory |
+| `CONFIG_FILE` | `.\config.json` | Custom configuration file |
+
+## Project Structure
+
 ```
+MSPEngine/
+├── Start-MSPEngine.ps1     # Main entry point
+├── Modules/
+│   ├── Debloat.ps1         # Debloat module
+│   ├── Security.ps1        # Security hardening
+│   ├── Network.ps1         # Network configuration
+│   ├── Drivers.ps1         # Driver management
+│   ├── Software.ps1        # Software deployment
+│   └── Updates.ps1         # Windows Update
+├── Config/
+│   └── default.json        # Default configuration
+├── Logs/                   # Operation logs
+└── README.md
+```
+
+## Contributing
+
+Contributions are welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for community standards.
+
+## Security
+
+For security concerns, see [SECURITY.md](SECURITY.md). Please report vulnerabilities to **info@jorahone.com** — do not use public issues.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT © Jhonattan L. Jimenez
 
 ---
-Part of the JorahOne / J1 ecosystem — streamlined Windows provisioning for MSPs.
+
+<div align="center">
+  <p>Windows provisioning for MSP technicians.</p>
+  <p><a href="https://github.com/OneByJorah">@OneByJorah</a></p>
+</div>
