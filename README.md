@@ -1,29 +1,24 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
-  <img src="https://img.shields.io/badge/Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white">
-  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge">
-</div>
 
-<br>
+![MSPEngine banner](docs/assets/banner.svg)
 
-<div align="center">
-  <h1>MSPEngine</h1>
-  <p><strong>Windows 10/11 Provisioning & Debloat Utility</strong></p>
-  <p>One-click setup and hardening for MSP technicians.</p>
-  <p>
-    <a href="#features">Features</a> •
-    <a href="#quick-start">Quick Start</a> •
-    <a href="#modules">Modules</a> •
-    <a href="#contributing">Contributing</a>
-  </p>
+# MSPEngine
+
+Windows 10/11 provisioning and debloat utility for MSP technicians
+
+![License](https://img.shields.io/badge/license-MIT-brightgreen)
+![Language](https://img.shields.io/badge/language-PowerShell-blue)
 </div>
 
 ---
 
-## Screenshot
+<p align="center">
+  <img src="docs/assets/screenshot.png" alt="MSPEngine preview" width="90%">
+</p>
 
-![MSPEngine Interface](docs/screenshot.png)
-*Windows provisioning and debloat utility for MSP technicians.*
+<br>
+
+---
 
 ## Features
 
@@ -38,7 +33,6 @@
 ## Quick Start
 
 ```powershell
-# Download and run
 git clone https://github.com/OneByJorah/MSPEngine.git
 cd MSPEngine
 
@@ -97,7 +91,18 @@ MIT © Jhonattan L. Jimenez
 
 ---
 
-<div align="center">
-  <p>Windows provisioning for MSP technicians.</p>
-  <p><a href="https://github.com/OneByJorah">@OneByJorah</a></p>
-</div>
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). All contributions follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## 🔒 Security
+
+Found a vulnerability? Please follow our [Security Policy](SECURITY.md) and report privately to `security@jorahone.com`.
+
+## 📄 License
+
+[MIT License](LICENSE) © Jhonattan L. Jimenez (OneByJorah)
+
+---
+
+<p align="center">Built with 🌴 by <a href="https://github.com/OneByJorah">OneByJorah</a> · <a href="https://jorahone.com">jorahone.com</a></p>
